@@ -14,32 +14,60 @@ public class CalculatorTest {
 
 	@Test
 	public void testGetTotal() {
-		fail("Not yet implemented");
+		Calculator myCalc = new Calculator();
+		assertEquals(myCalc.getTotal(), 0);
 	}
 
 	@Test
 	public void testAdd() {
-		fail("Not yet implemented");
+		Calculator myCalc = new Calculator();
+		myCalc.add(5);
+		assertEquals(myCalc.getTotal(), 5);
+		myCalc.add(12);
+		assertEquals(myCalc.getTotal(), 17);
 	}
 
 	@Test
 	public void testSubtract() {
-		fail("Not yet implemented");
+		Calculator myCalc = new Calculator();
+		myCalc.subtract(5);
+		assertEquals(myCalc.getTotal(), -5);
+		myCalc.subtract(12);
+		assertEquals(myCalc.getTotal(), -17);
 	}
 
 	@Test
 	public void testMultiply() {
-		fail("Not yet implemented");
+		Calculator myCalc = new Calculator();
+		myCalc.multiply(5);
+		assertEquals(myCalc.getTotal(), 0);
+		myCalc.add(5);
+		assertEquals(myCalc.getTotal(), 5);
+		myCalc.multiply(3);
+		assertEquals(myCalc.getTotal(), 15);
 	}
 
 	@Test
 	public void testDivide() {
-		fail("Not yet implemented");
+		Calculator myCalc = new Calculator();
+		myCalc.add(12);
+		assertEquals(myCalc.getTotal(), 12);
+		myCalc.divide(3);
+		assertEquals(myCalc.getTotal(), 4);
+		myCalc.divide(0);
+		assertEquals(myCalc.getTotal(), 0);
 	}
 
 	@Test
 	public void testGetHistory() {
-		fail("Not yet implemented");
+		Calculator myCalc = new Calculator();
+		myCalc.add(12);
+		myCalc.divide(3);
+		myCalc.subtract(1);
+		myCalc.multiply(5);
+		myCalc.divide(0);
+		assertEquals(myCalc.getTotal(), 0);
+		assertEquals(myCalc.getHistory(), "0 + 12 / 3 - 1 * 5 / 0");
 	}
 
 }
